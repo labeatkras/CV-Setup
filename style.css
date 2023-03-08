@@ -1,0 +1,79 @@
+/*****************************************/
+/* General Styling */
+
+*,
+*:before *:after {
+  box-sizing: border-box;
+}
+body {
+  margin: 0px;
+}
+* {
+  font-family: "Open Sans", sans-serif;
+}
+h1,
+h2,
+h3 {
+  font-family: "Ubuntu", sans-serif;
+}
+
+/******************************************/
+/* Specific Styling */
+
+.header {
+  padding: 48px 16px;
+  text-align: center;
+}
+.header:hover {
+  background-color: rgb(236, 241, 231);
+}
+.header h1:hover {
+  color: lawngreen;
+}
+
+.nav-link {
+  padding: 4px 8px;
+  color: black;
+}
+
+.nav-link:hover {
+  color: white;
+}
+
+.nav-link:active {
+  color: lawngreen;
+  background-color: black;
+}
+
+.nav-link + .nav-link {
+  margin-left: 16px;
+}
+
+.main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 16px;
+}
+.main:hover {
+  background-color: rgb(236, 241, 231);
+}
+
+.main > * + * {
+  margin-top: 48px;
+}
+
+.main > * {
+  border-top: 2px solid grey;
+}
+
+.main > *:first-child {
+  border-top: none;
+}
+
+.greendots {
+  color: chartreuse;
+}
+
+.contact-links {
+  color: lawngreen;
+}
