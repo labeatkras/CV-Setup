@@ -8,6 +8,7 @@
 
 html {
   font-family: "Open Sans", sans-serif;
+  font-size: 16px;
 }
 
 h1,
@@ -25,12 +26,24 @@ body {
   color: lawngreen;
 }
 
+@media screen and (min-width: 992px) {
+  html {
+    font-size: 20px;
+  }
+}
+
+@media screen and (min-width: 786px) {
+  html {
+    font-size: 18px;
+  }
+}
+
 /******************************************/
 /* Specific Styling */
 
 .header {
-  padding: 48px 16px;
-  padding-top: 72px;
+  padding: 3rem 1rem;
+  padding-top: 4.5rem;
   text-align: center;
   position: relative;
 }
@@ -40,19 +53,49 @@ body {
 .header h1:hover {
   color: lawngreen;
 }
+.heading-group {
+  font-size: 4rem;
+}
+.main-heading {
+  font-size: 1em;
+}
+.profession {
+  font-size: 0.25em;
+}
 
 .hire-me {
   position: absolute;
-  right: 16px;
-  top: 16px;
-  padding: 8px;
-  border-radius: 10px;
+  right: 1rem;
+  top: 1rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
   background-color: rgb(236, 241, 231);
   color: black;
 }
 
+@media screen and (min-width: 992px) {
+  .hire-me {
+    position: fixed;
+  }
+}
+
+@media print {
+  .hire-me {
+    display: none;
+  }
+  .navigation {
+    display: none;
+  }
+}
+
+@media screen {
+  footer {
+    display: none;
+  }
+}
+
 .nav-link {
-  padding: 4px 8px;
+  padding: 0.25rem 0.5rem;
   color: black;
 }
 
@@ -66,24 +109,31 @@ body {
 }
 
 .nav-link + .nav-link {
-  margin-left: 16px;
+  margin-left: 1rem;
 }
 
 .main {
-  max-width: 800px;
+  max-width: 50ch;
   margin: 0 auto;
-  padding: 16px;
+  padding: 1rem;
 }
 .main:hover {
   background-color: rgb(236, 241, 231);
 }
 
 .main > * + * {
-  margin-top: 48px;
+  margin-top: 3rem;
+}
+
+@media screen and (min-width: 768px) {
+  .main > * + * {
+    margin-top: 5rem;
+  }
 }
 
 .main > * {
-  border-top: 2px solid grey;
+  border-top: 0.125rem solid grey;
+  padding: 0 1rem;
 }
 
 .main > *:first-child {
@@ -92,7 +142,7 @@ body {
 
 .artical-heading {
   position: relative;
-  left: -16px;
+  left: -1rem;
 }
 
 .experience-heading {
