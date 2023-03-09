@@ -5,16 +5,24 @@
 *:before *:after {
   box-sizing: border-box;
 }
-body {
-  margin: 0px;
-}
-* {
+
+html {
   font-family: "Open Sans", sans-serif;
 }
+
 h1,
 h2,
 h3 {
   font-family: "Ubuntu", sans-serif;
+}
+
+body {
+  margin: 0px;
+}
+
+::selection {
+  background-color: black;
+  color: lawngreen;
 }
 
 /******************************************/
@@ -22,13 +30,25 @@ h3 {
 
 .header {
   padding: 48px 16px;
+  padding-top: 72px;
   text-align: center;
+  position: relative;
 }
 .header:hover {
   background-color: rgb(236, 241, 231);
 }
 .header h1:hover {
   color: lawngreen;
+}
+
+.hire-me {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  padding: 8px;
+  border-radius: 10px;
+  background-color: rgb(236, 241, 231);
+  color: black;
 }
 
 .nav-link {
@@ -70,10 +90,25 @@ h3 {
   border-top: none;
 }
 
+.artical-heading {
+  position: relative;
+  left: -16px;
+}
+
+.experience-heading {
+  display: inline-block;
+}
+.experience-subheading {
+  display: inline-block;
+}
+
 .greendots {
   color: chartreuse;
 }
 
 .contact-links {
   color: lawngreen;
+}
+.contact-links:hover {
+  color: green;
 }
