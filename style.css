@@ -11,6 +11,18 @@ html {
   font-size: 16px;
 }
 
+@media screen and (min-width: 992px) {
+  html {
+    font-size: 20px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  html {
+    font-size: 18px;
+  }
+}
+
 h1,
 h2,
 h3 {
@@ -24,18 +36,6 @@ body {
 ::selection {
   background-color: black;
   color: lawngreen;
-}
-
-@media screen and (min-width: 992px) {
-  html {
-    font-size: 20px;
-  }
-}
-
-@media screen and (min-width: 786px) {
-  html {
-    font-size: 18px;
-  }
 }
 
 /******************************************/
@@ -57,7 +57,7 @@ body {
   font-size: 4rem;
 }
 .main-heading {
-  font-size: 1em;
+  font-size: 0.75em;
 }
 .profession {
   font-size: 0.25em;
@@ -94,6 +94,19 @@ body {
   }
 }
 
+.navigation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media screen and (min-width: 768px) {
+  .navigation {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
 .nav-link {
   padding: 0.25rem 0.5rem;
   color: black;
@@ -108,8 +121,10 @@ body {
   background-color: black;
 }
 
-.nav-link + .nav-link {
-  margin-left: 1rem;
+@media screen and (min-width: 768px) {
+  .nav-link + .nav-link {
+    margin-left: 1rem;
+  }
 }
 
 .main {
@@ -161,4 +176,9 @@ body {
 }
 .contact-links:hover {
   color: green;
+}
+
+.text-container:hover {
+  border: 1px solid greenyellow;
+  border-radius: 10px;
 }
