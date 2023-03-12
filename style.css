@@ -10,6 +10,11 @@ html {
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
 }
+@media screen and (min-width: 768px) {
+  html {
+    font-size: 18px;
+  }
+}
 
 @media screen and (min-width: 992px) {
   html {
@@ -17,15 +22,12 @@ html {
   }
 }
 
-@media screen and (min-width: 768px) {
-  html {
-    font-size: 18px;
-  }
-}
-
 h1,
 h2,
-h3 {
+h3,
+h4,
+h5,
+h6 {
   font-family: "Ubuntu", sans-serif;
 }
 
@@ -51,11 +53,10 @@ body {
   margin: 0px;
   color: var(--text-color);
   background: var(--green-gradient);
-
 }
 
 ::selection {
-  background-color: black;
+  background-color: var(--text-color);
   color: var(--accent-color);
 }
 
@@ -63,11 +64,12 @@ body {
 /* Specific Styling */
 
 .header {
-  background: var(--green-gradient);
   padding: 3rem 1rem;
   padding-top: 4.5rem;
   text-align: center;
+  background-image: var(--green-gradient);
   position: relative;
+  color: var(--text-color);
 }
 .header:hover {
   background-image: url(images/amoxcron.png);
@@ -83,7 +85,16 @@ body {
 }
 .main-heading {
   font-size: 0.75em;
+  transform-origin: center;
+  transition: transform 0.25s ease-in-out, opacity 0.25s ease-in-out;
 }
+
+.header:hover h1,
+.header:focus-within h1 {
+  opacity: 1;
+  transform: scale(1.5);
+}
+
 .profession {
   font-size: 0.25em;
 }
@@ -94,8 +105,16 @@ body {
   top: 1rem;
   padding: 0.5rem;
   border-radius: 0.5rem;
-  background-color: var(--hire-me-color);
   color: var(--text-color);
+  background-color: var(--hire-me-color);
+  transform-origin: top right;
+  transition: transform 0.25s ease-in-out, opacity 0.25s ease-in-out;
+}
+
+.header:hover .hire-me,
+.header:focus-within .hire-me {
+  opacity: 1;
+  transform: scale(1.5);
 }
 
 @media screen and (min-width: 992px) {
@@ -129,6 +148,7 @@ body {
 .nav-link {
   padding: 0.25rem 0.5rem;
   color: var(--text-color);
+  transition: background-color 0.25s ease-in-out;
 }
 
 .nav-link:hover {
@@ -136,8 +156,18 @@ body {
 }
 
 .nav-link:active {
-  color:var(--accent-color)
   background-color: var(--text-color);
+  color: var(--accent-color);
+}
+
+.nav-link:visited {
+  _background-color: var(--accent2-color);
+}
+
+.nav-link:focus {
+  _background-color: var(--text-color);
+  _outline-color: var(--accent2-color);
+  outline-style: dotted;
 }
 
 @media screen and (min-width: 768px) {
@@ -151,6 +181,12 @@ body {
   margin: 0 auto;
   padding: 1rem;
 }
+@media screen and (min-width: 768px) {
+  .main {
+    max-width: 80ch;
+  }
+}
+
 .main:hover {
   background: var(--green-gradient);
 }
@@ -161,20 +197,34 @@ body {
 
 @media screen and (min-width: 768px) {
   .main > * + * {
-    margin-top: 5rem;
+    margin-top: 8rem;
   }
-}
-
-.main > * {
-  border-top: 0.125rem solid var(--accent-color);
-  padding: 0 1rem;
+  .main > *:first-child {
+    margin-top: 4rem;
+  }
 }
 
 .main > *:first-child {
   border-top: none;
 }
 
-.artical-heading {
+.main-article {
+  border-top: 0.125rem solid var(--accent-color);
+  padding: 0 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .main-article {
+    display: grid;
+    grid-template-columns: 1fr 2.5fr;
+  }
+
+  .main-article-content {
+    margin-top: 4rem;
+  }
+}
+
+.main-article-heading {
   position: relative;
   left: -1rem;
 }
@@ -192,20 +242,12 @@ body {
   }
 }
 
-.experience-heading {
-  display: inline-block;
-}
-
-.experience-subheading {
-  display: inline-block;
-}
-
 .greendots {
-  color: var(--accent-color)
+  color: var(--accent-color);
 }
 
 .contact-links {
-  color: var(--accent-color)
+  color: var(--accent-color);
 }
 .contact-links:hover {
   color: var(--accent2-color);
@@ -227,7 +269,7 @@ body {
   margin: 0;
 }
 .footer-link {
-  color: var(--accent-color)
+  color: var(--accent-color);
 }
 
 .footer-link:hover {
