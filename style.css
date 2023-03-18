@@ -86,17 +86,22 @@ body {
 .main-heading {
   font-size: 0.75em;
   transform-origin: center;
-  transition: transform 0.25s ease-in-out, opacity 0.25s ease-in-out;
+  transition: color 1s ease-in-out, transform 0.5s ease-in-out,
+    opacity 0.25s ease-in-out;
 }
 
 .header:hover h1,
 .header:focus-within h1 {
   opacity: 1;
-  transform: scale(1.5);
+  transform: translateY(10%) rotateX(360deg) scale(1.2);
 }
 
 .profession {
   font-size: 0.25em;
+  transition: transform 1s;
+}
+.heading-group:hover .profession {
+  transform: translateY(-15%);
 }
 
 .hire-me {
@@ -115,6 +120,7 @@ body {
 .header:focus-within .hire-me {
   opacity: 1;
   transform: scale(1.5);
+  background-color: var(--accent-color);
 }
 
 @media screen and (min-width: 992px) {
@@ -148,7 +154,17 @@ body {
 .nav-link {
   padding: 0.25rem 0.5rem;
   color: var(--text-color);
-  transition: background-color 0.25s ease-in-out;
+  transition: color 0.25s ease-in-out;
+  border: 1px solid var(--accent-color);
+  border-radius: 30px;
+  text-decoration: none;
+}
+
+@media screen and (min-width: 768px) {
+  .nav-link {
+    border: 1px solid var(--accent-color);
+    border-radius: 30px 30px 15px 15px;
+  }
 }
 
 .nav-link:hover {
@@ -255,7 +271,7 @@ body {
 
 .text-container:hover {
   border: 1px solid var(--accent-color);
-  border-radius: 10px;
+  border-radius: 10px 0px 10px 0px;
 }
 
 .footer {
